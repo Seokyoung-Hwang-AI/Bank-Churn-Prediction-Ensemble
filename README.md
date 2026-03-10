@@ -60,3 +60,13 @@ Instead of relying on a single algorithm, I implemented a **Soft Voting Ensemble
 
 ## Author's Note
 This enhanced version demonstrates my proficiency in building end-to-end machine learning pipelines. By refactoring my academic work with modern AI collaboration (Google Gemini), I have prepared a portfolio piece that meets the technical standards for graduate-level studies and professional data science roles in the U.S.
+
+---
+
+## Data Attribution & Privacy
+The primary dataset used in this project was provided as part of an internal academic competition at **Korea National Open University**. 
+- **Source:** Private Kaggle Competition (Institutional Access Only)
+- **Nature of Data:** bank customer data, including demographics (Age, Geography, Gender) and financial behavior (Balance, Tenure, NumOfProducts).
+- **Data Augmentation:** To enhance model robustness, this private data was supplemented with the publicly available "Churn Modelling" dataset.
+
+*Note: The raw data files are not included in this repository to comply with academic integrity and privacy guidelines.*
