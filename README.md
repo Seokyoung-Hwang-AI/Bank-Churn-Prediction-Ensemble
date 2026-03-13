@@ -59,7 +59,7 @@ The Soft-Voting Ensemble significantly outperformed individual models, achieving
 | **F1-Score** | **0.81** | Demonstrated a robust balance between Precision and Recall. |
 
 ### 📊 Final Classification Analysis
-![Final Confusion Matrix](./images/final_confusion_matrix.png)
+![Final Confusion Matrix](./images/final_confusion_matrix_heatmap.png)
 *The **Confusion Matrix** above illustrates the final ensemble's performance. With a high **True Negative rate (93%)**, the model ensures that loyal customers are not wrongly targeted with unnecessary retention costs, while the **0.69 Recall** provides a strong foundation for proactive customer engagement.*
 ### 🔝 Top 10 Drivers of Customer Churn
 ![Feature Importance](./images/feature_importance.png)
