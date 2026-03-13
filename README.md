@@ -48,11 +48,24 @@ Instead of relying on a single algorithm, I implemented a **Soft Voting Ensemble
 
 ## 📈 Model Insights & Results
 
+### 🏁 Ensemble Performance Summary
+The Soft-Voting Ensemble significantly outperformed individual models, achieving a highly reliable discriminative power.
+
+| Metric | Score | Professional Interpretation |
+| :--- | :--- | :--- |
+| **ROC-AUC Score** | **0.9193** | **Excellent** ability to distinguish between churners and loyal customers. |
+| **Overall Accuracy** | **0.88** | 88% of all predictions matched the actual customer status. |
+| **Recall (Class 1.0)** | **0.69** | Successfully captured **69% of actual churners**, reducing missed risks. |
+| **F1-Score** | **0.81** | Demonstrated a robust balance between Precision and Recall. |
+
+### 📊 Final Classification Analysis
+![Final Confusion Matrix](./images/final_confusion_matrix.png)
+*The **Confusion Matrix** above illustrates the final ensemble's performance. With a high **True Negative rate (93%)**, the model ensures that loyal customers are not wrongly targeted with unnecessary retention costs, while the **0.69 Recall** provides a strong foundation for proactive customer engagement.*
 ### 🔝 Top 10 Drivers of Customer Churn
 ![Feature Importance](./images/feature_importance.png)
 *The XGBoost importance plot reveals that **Age**, **Balance**, and **EstimatedSalary** are the strongest predictors of whether a customer will stay or leave. This insight allows for targeted marketing to specific demographic segments.*
 
-### 🏁 Final Prediction Distribution (Test Set)
+### ⚖️ Final Prediction Distribution (Test Set)
 ![Final Prediction](./images/final_prediction_dist.png)
 *The final ensemble model identified **19.37%** of the test population as high-risk churners, providing a realistic and actionable insight for the bank's retention team.*
 
