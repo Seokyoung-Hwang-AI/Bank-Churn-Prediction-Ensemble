@@ -5,7 +5,7 @@
 ---
 
 ## 📖 Project Overview
-This project focuses on identifying high-risk customers who are likely to churn (exit) from a bank. It was originally developed as a graduation assignment at **Korea National Open University (KNOU)** and has been significantly enhanced using advanced ensemble techniques and automated pipelines.
+This project focuses on identifying high-risk customers who are likely to churn (exit) from a bank. It was originally developed as a final project at **Korea National Open University (KNOU)** in Nov 2025 and has been significantly enhanced using advanced ensemble techniques and automated pipelines.
 
 ## 🛠 Tech Stack
 - **Language:** Python 3.x
