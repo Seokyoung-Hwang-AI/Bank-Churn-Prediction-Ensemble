@@ -7,10 +7,12 @@
 ## 📖 Project Overview
 This project focuses on identifying high-risk customers who are likely to churn (exit) from a bank. It was originally developed as **a final project at Korea National Open University (KNOU) in Nov 2025** and has been significantly enhanced using advanced ensemble techniques and automated pipelines.
 
+---
+
 ## 🛠 Tech Stack
-- **Language:** Python 3.x
-- **Core Models:** XGBoost, CatBoost, LightGBM
-- **Key Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
+* **Language:** Python
+* **Machine Learning:** XGBoost, CatBoost, LightGBM
+* **Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
 
 ---
 
@@ -69,12 +71,5 @@ The Soft-Voting Ensemble significantly outperformed individual models, achieving
 *The final ensemble model identified **19.37%** of the test population as high-risk churners, providing a realistic and actionable insight for the bank's retention team.*
 
 ---
-
-## 🔒 Data Attribution & Privacy
-* **Primary Source:** The core dataset was provided for an internal academic competition at **Korea National Open University (KNOU)** via a private Kaggle platform.
-* **Data Composition:** Features include customer demographics (Age, Geography, Gender) and financial indicators (Balance, Tenure, NumOfProducts).
-* **Data Augmentation:** To improve the model's generalizability and handle potential class imbalance, the private institutional data was supplemented with the publicly available **"Churn Modelling"** dataset.
-* **Privacy Compliance:** In accordance with institutional data policies, **raw data files are not included** in this public repository. All shared analysis and notebooks utilize anonymized or synthetic samples.
-
----
-**Acknowledgment:** Technical documentation, English terminology refactoring, and code optimization for this project were supported by **Google Gemini**.
+* **Note on Dataset**: The dataset used in this project is not included in this repository as it was provided for academic purposes (KNOU Coursework).
+* **Acknowledgment:** Code optimization, English terminology refactoring, and Technical documentation for this project were supported by **Google Gemini**.
