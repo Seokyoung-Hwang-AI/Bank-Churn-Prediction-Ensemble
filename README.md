@@ -1,75 +1,67 @@
 # 🏦 Bank Customer Churn Prediction: Multi-Model Ensemble Approach
 
-> **Project Goal:** Predict customer attrition for a banking institution using an ensemble of Gradient Boosting Decision Trees (GBDT).
+> **Project Goal:** To minimize customer attrition by building a high-precision predictive system using a **Soft-Voting Ensemble** of Gradient Boosting Decision Trees (GBDT).
 
 ---
 
 ## 📖 Project Overview
-This project focuses on identifying high-risk customers who are likely to churn (exit) from a bank. It was originally developed as **a final project at Korea National Open University (KNOU) in Nov 2025** and has been significantly enhanced using advanced ensemble techniques and automated pipelines.
+This project addresses the critical business challenge of customer churn in the banking sector. By evolving from a baseline comparison to a **sophisticated ensemble pipeline (XGBoost, CatBoost, LightGBM)**, I achieved a **0.92 ROC-AUC score**, providing actionable insights for proactive retention strategies.
 
 ---
 
 ## 🛠 Tech Stack
 * **Language:** Python
-* **Machine Learning:** XGBoost, CatBoost, LightGBM
+* **Machine Learning:** XGBoost, CatBoost, LightGBM, Soft-Voting Ensemble
 * **Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
 
 ---
 
+## 💡 Key Engineering Decisions
+
+* **Strategic Data Augmentation:** Merged the competition dataset with original "Churn Modelling" data to enhance model robustness and pattern recognition.
+* **Professional Preprocessing Pipeline:** Implemented a `ColumnTransformer` workflow with `OneHotEncoder` to ensure seamless, leakage-free transitions between training and test environments.
+* **Soft-Voting Ensemble Strategy:** Leveraged the unique strengths of three industry-leading algorithms to maximize generalization:
+    * **XGBoost:** Precise linear relationship mapping.
+    * **CatBoost:** Advanced categorical feature handling.
+    * **LightGBM:** Efficient leaf-wise growth for complex patterns.
+
+---
+
 ## 📊 Exploratory Data Analysis (EDA)
-Understanding the data distribution and relationships between features is the first step in our predictive modeling.
 
-### 1️⃣ Target Class Distribution
+Understanding the data distribution is the first step in our predictive modeling.
+
 ![Target Distribution](./images/target_distribution.png)
-*The dataset shows a natural imbalance, with approximately 20% of customers having exited. This informed our choice of using weighted loss functions in the models.*
+* **Insight:** The dataset shows a ~20% churn rate. This imbalance informed the choice of **ROC-AUC** as our primary metric and the use of weighted loss functions.
 
-### 2️⃣ Feature Correlation Heatmap
 ![Feature Correlation](./images/correlation_heatmap.png)
-*Correlation analysis helped identify redundant features and understand the linear relationships between numerical variables like Age, Balance, and Credit Score.*
+* **Insight:** Correlation analysis identified **Age** ($0.38$) as the primary driver of churn, showing a significant positive relationship. Along with **Balance** and **NumOfProducts** ($-0.37$), these key variables guided the feature selection to prioritize the most predictive behavioral patterns for the ensemble model."
 
 ---
 
-## 🌟 Key Highlights
+## 📈 Model Analysis & Insights
 
-### 1️⃣ Strategic Data Augmentation
-To improve the model's ability to generalize, I merged the competition dataset with the original "Churn Modelling" dataset. This increased the training volume and allowed the model to learn more robust patterns.
-
-### 2️⃣ Automated Preprocessing Pipeline
-I utilized Scikit-learn's `ColumnTransformer` to create a professional-grade preprocessing workflow.
-* **Categorical Data:** Encoded using `OneHotEncoder` with `handle_unknown='ignore'`.
-* **Seamless Integration:** All transformations are applied in a single pipeline, ensuring consistency between training and test data.
-
-### 3️⃣ High-Performance Ensemble (Soft Voting)
-Instead of relying on a single algorithm, I implemented a **Soft Voting Ensemble** strategy. By averaging the predicted probabilities from **XGBoost, CatBoost, and LightGBM**, the model achieves a balanced result.
-* **🚀 XGBoost:** Excellent at capturing precise linear relationships.
-* **🐾 CatBoost:** Naturally handles categorical features with high accuracy.
-* **⚡ LightGBM:** Fast training with high leaf-wise performance.
-
----
-
-## 📈 Model Insights & Results
-
-### 1️⃣ Ensemble Performance Summary
-The Soft-Voting Ensemble significantly outperformed individual models, achieving a highly reliable discriminative power.
+### 1️⃣ Performance Summary
+The ensemble model demonstrates excellent discriminative power, balancing precision and risk detection.
 
 | Metric | Score | Professional Interpretation |
 | :--- | :--- | :--- |
-| **ROC-AUC Score** | **0.9193** | **Excellent** ability to distinguish between churners and loyal customers. |
-| **Overall Accuracy** | **0.88** | 88% of all predictions matched the actual customer status. |
-| **Recall (Class 1.0)** | **0.69** | Successfully captured **69% of actual churners**, reducing missed risks. |
-| **F1-Score** | **0.81** | Demonstrated a robust balance between Precision and Recall. |
+| **ROC-AUC** | **0.9193** | **Exceptional** ability to distinguish churners from loyal customers. |
+| **Recall (Class 1)** | **0.69** | Successfully captured **69% of actual churners**, reducing missed risks. |
+| **F1-Score** | **0.81** | Robust balance between Precision and Recall. |
 
-### 2️⃣ Final Classification Analysis
+### 2️⃣ Deep Dive Analysis
+
 ![Final Confusion Matrix](./images/final_confusion_matrix_heatmap.png)
-*The **Confusion Matrix** above illustrates the final ensemble's performance. With a high **True Negative rate (93%)**, the model ensures that loyal customers are not wrongly targeted with unnecessary retention costs, while the **0.69 Recall** provides a strong foundation for proactive customer engagement.*
-### 3️⃣ Top 10 Drivers of Customer Churn
-![Feature Importance](./images/feature_importance.png)
-*The XGBoost importance plot reveals that **Age**, **Balance**, and **EstimatedSalary** are the strongest predictors of whether a customer will stay or leave. This insight allows for targeted marketing to specific demographic segments.*
+* **Strategic Insight:** With a **93% True Negative rate**, the model ensures loyal customers are not wrongly targeted with unnecessary retention costs, while the **0.69 Recall** provides a strong foundation for engagement.
 
-### 4️⃣ Final Prediction Distribution (Test Set)
+![Feature Importance](./images/feature_importance.png)
+* **Primary Driving Factors**: **Age** ($0.38$) emerged as the most critical predictor of churn, indicating that older customer segments require urgent retention focus. Combined with **Balance** and **Estimated Salary** metrics, these insights enable the bank to execute precision marketing aimed at protecting its most profitable, high-value demographic segments.
+
 ![Final Prediction](./images/final_prediction_dist.png)
-*The final ensemble model identified **19.37%** of the test population as high-risk churners, providing a realistic and actionable insight for the bank's retention team.*
+* **Actionable Output:** The model flagged **19.37%** of the test population as high-risk, providing a manageable and realistic target list for the bank's retention team.
 
 ---
+* **Project Origin**: This project was developed as a final project for the Department of AI at Korea National Open University (KNOU) in December 2025.
 * **Note on Dataset**: The dataset used in this project is not included in this repository as it was provided for academic purposes (KNOU Coursework).
 * **Acknowledgment:** Code optimization, English terminology refactoring, and Technical documentation for this project were supported by **Google Gemini**.
