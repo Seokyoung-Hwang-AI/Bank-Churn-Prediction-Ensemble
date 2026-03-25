@@ -31,10 +31,10 @@ This project addresses the critical business challenge of customer churn in the 
 
 Understanding the data distribution is the first step in our predictive modeling.
 
-![Target Distribution](./images/target_distribution.png)
+![Target Distribution](./images/01_target_distribution.png)
 * **Insight:** The dataset shows a ~20% churn rate. This imbalance informed the choice of **ROC-AUC** as our primary metric and the use of weighted loss functions.
 
-![Feature Correlation](./images/correlation_heatmap.png)
+![Feature Correlation](./images/02_correlation_heatmap.png)
 * **Insight:** Correlation analysis identified **Age** ($0.38$) as the primary driver of churn, showing a significant positive relationship. Along with **Balance** and **NumOfProducts** ($-0.37$), these key variables guided the feature selection to prioritize the most predictive behavioral patterns for the ensemble model."
 
 ---
@@ -52,13 +52,13 @@ The ensemble model demonstrates excellent discriminative power, balancing precis
 
 ### 2️⃣ Deep Dive Analysis
 
-![Final Confusion Matrix](./images/final_confusion_matrix_heatmap.png)
+![Final Confusion Matrix](./images/03_final_confusion_matrix_heatmap.png)
 * **Strategic Insight:** With a **93% True Negative rate**, the model ensures loyal customers are not wrongly targeted with unnecessary retention costs, while the **0.69 Recall** provides a strong foundation for engagement.
 
-![Feature Importance](./images/feature_importance.png)
+![Feature Importance](./images/04_feature_importance.png)
 * **Primary Driving Factors**: **Age** ($0.38$) emerged as the most critical predictor of churn, indicating that older customer segments require urgent retention focus. Combined with **Balance** and **Estimated Salary** metrics, these insights enable the bank to execute precision marketing aimed at protecting its most profitable, high-value demographic segments.
 
-![Final Prediction](./images/final_prediction_dist.png)
+![Final Prediction](./images/05_final_prediction_dist.png)
 * **Actionable Output:** The model flagged **19.37%** of the test population as high-risk, providing a manageable and realistic target list for the bank's retention team.
 
 ---
