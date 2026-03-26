@@ -50,7 +50,7 @@ The ensemble model demonstrates excellent discriminative power, balancing precis
 | **Recall (Class 1)** | **0.69** | Successfully captured **69% of actual churners**, reducing missed risks. |
 | **F1-Score** | **0.81** | Robust balance between Precision and Recall. |
 
-### 2️⃣ Deep Dive Analysis
+### 2️⃣ Key Business Insights
 
 ![Final Confusion Matrix](./images/03_final_confusion_matrix_heatmap.png)
 * **Strategic Insight:** With a **93% True Negative rate**, the model ensures loyal customers are not wrongly targeted with unnecessary retention costs, while the **0.69 Recall** provides a strong foundation for engagement.
