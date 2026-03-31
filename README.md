@@ -46,9 +46,9 @@ The ensemble model demonstrates excellent discriminative power, balancing precis
 
 | Metric | Score | Professional Interpretation |
 | :--- | :--- | :--- |
-| **ROC-AUC** | **0.9193** | **Exceptional** ability to distinguish churners from loyal customers. |
-| **Recall (Class 1)** | **0.69** | Successfully captured **69% of actual churners**, reducing missed risks. |
-| **F1-Score** | **0.81** | Robust balance between Precision and Recall. |
+| **ROC-AUC** | **0.92** | **Exceptional** ability to distinguish churners from loyal customers. |
+| **Recall** | **0.69** | Successfully captured **69% of actual churners**, reducing missed risks. |
+| **F1-Score** | **0.82** | Robust balance between Precision and Recall. |
 
 ### 2️⃣ Key Business Insights
 
@@ -56,10 +56,10 @@ The ensemble model demonstrates excellent discriminative power, balancing precis
 * **Strategic Insight:** With a **93% True Negative rate**, the model ensures loyal customers are not wrongly targeted with unnecessary retention costs, while the **0.69 Recall** provides a strong foundation for engagement.
 
 ![Feature Importance](./images/04_feature_importance.png)
-* **Primary Driving Factors**: **Age** ($0.38$) emerged as the most critical predictor of churn, indicating that older customer segments require urgent retention focus. Combined with **Balance** and **Estimated Salary** metrics, these insights enable the bank to **execute precision marketing** aimed at protecting its most profitable, high-value demographic segments.
+* **Primary Driving Factors**: **Age** ($0.38$) emerged as the most critical predictor of churn, indicating that older customer segments require urgent retention focus. Combined with **Estimated Salary** and **Balance** metrics, these insights enable the bank to **execute precision marketing** aimed at protecting its most profitable, high-value demographic segments.
 
 ![Final Prediction](./images/05_final_prediction_dist.png)
-* **Actionable Output:** The model flagged **19.37%** of the test population as high-risk, **providing a manageable and realistic target list** for the bank's retention team.
+* **Actionable Output:** The model flagged **19.34%** of the test population as high-risk, **providing a manageable and realistic target list** for the bank's retention team.
 
 ---
 * **Project Origin**: This project was developed as a final project for the Department of AI at Korea National Open University (KNOU) in December 2025.
