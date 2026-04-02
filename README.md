@@ -12,6 +12,7 @@ This project addresses the critical business challenge of customer churn in the 
 ## 🛠 Tech Stack
 * **Language:** Python
 * **Machine Learning:** XGBoost, CatBoost, LightGBM, Soft-Voting Ensemble
+* **Deployment:** Streamlit (Web Application)
 * **Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
 
 ---
