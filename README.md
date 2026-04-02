@@ -1,7 +1,7 @@
 # 🏦 Bank Customer Churn Prediction: Multi-Model Ensemble Approach
 
 > **Project Goal:** To minimize customer attrition by building a high-precision predictive system using a **Soft-Voting Ensemble** of Gradient Boosting Decision Trees (GBDT).
-> 🚀 **[Live Demo on Streamlit Cloud](https://sh-bank-churn-prediction-ensemble.streamlit.app/)**
+>> 🚀 **[Live Demo on Streamlit Cloud](https://sh-bank-churn-prediction-ensemble.streamlit.app/)**
 
 ---
 
