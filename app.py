@@ -28,16 +28,16 @@ preprocessor, model_xgb, model_cat, model_lgb = load_assets()
 def get_user_input():
     st.sidebar.header("📝 Customer Information")
     # Input fields mapped to training feature names
-    credit_score = st.sidebar.number_input("Credit Score", 0, 850, 655)
+    credit_score = st.sidebar.number_input("Credit Score", 350, 850, 659)
     geography = st.sidebar.selectbox("Geography", ["France", "Germany", "Spain"])
     gender = st.sidebar.selectbox("Gender", ["Female", "Male"])
-    age = st.sidebar.slider("Age", 0, 100, 35)
+    age = st.sidebar.slider("Age", 18, 72, 37)
     tenure = st.sidebar.slider("Tenure (Years)", 0, 10, 5)
-    balance = st.sidebar.number_input("Balance ($)", 0.0, 190000.0, 43000.0)
+    balance = st.sidebar.number_input("Balance ($)", 0.0, 187000.0, 0.0)
     num_products = st.sidebar.selectbox("Number of Products", [1, 2, 3, 4])
     has_crcard = st.sidebar.selectbox("Has Credit Card?", [1, 0])
     is_active = st.sidebar.selectbox("Is Active Member?", [1, 0])
-    salary = st.sidebar.number_input("Estimated Salary ($)", 0.0, 19000000.0, 120000.0)
+    salary = st.sidebar.number_input("Estimated Salary ($)", 0.0, 18700000.0, 122000.0)
 
     # Wrap input data into a DataFrame for consistent preprocessing
     data = {
@@ -98,36 +98,36 @@ with col2:
 
 # Transparency Section
 st.divider()
-with st.expander("Show Raw Input DataFrame"):
+with st.expander("🔍 Show Raw Input DataFrame"):
     st.write("Below is the structured data currently being fed into the model:")
     st.dataframe(input_df)
 
 # Model Insights
-st.divider()
-st.markdown("###💡 Insights: What Drives Customer Churn?")
-st.markdown("""
-### **Top 3 Critical Drivers**
-Our ensemble model identifies these features as the most influential factors in predicting customer behavior.
-""")
-
-# Using columns to display the Top 3 features as key metrics
-col_feat1, col_feat2, col_feat3 = st.columns(3)
+with st.expander("💡 Insights: What Drives Customer Churn?"):
+    st.markdown("""
+    ### **Top 3 Critical Drivers**
+    Our ensemble model identifies these features as the most influential factors in predicting customer behavior.
+    """)
     
-with col_feat1:
-    # 1st Priority: Age (Importance: 152)
-    st.metric(label="Primary Driver", value="Age")
-    st.caption("Older customers show higher churn sensitivity in this specific demographic.")
+    # Define columns inside the expander to ensure proper grouping
+    col_feat1, col_feat2, col_feat3 = st.columns(3)
 
-with col_feat2:
-    # 2nd Priority: Estimated Salary (Importance: 118)
-    st.metric(label="Secondary Driver", value="EstimatedSalary")
-    st.caption("Income levels strongly correlate with long-term retention.")
+    with col_feat1:
+        # 1st Priority: Age (Importance: 152)
+        st.metric(label="Primary Driver", value="Age")
+        st.caption("Older segments show higher churn sensitivity in this specific demographic.")
 
-with col_feat3:
-    # 3rd Priority: Balance (Importance: 111)
-    st.metric(label="Tertiary Driver", value="Balance")
-    st.caption("Account liquidity is a key indicator of a customer's total engagement.")
+    with col_feat2:
+        # 2nd Priority: Estimated Salary (Importance: 118)
+        st.metric(label="Secondary Driver", value="Salary") # Shortened for UI clarity
+        st.caption("Income levels strongly correlate with long-term retention patterns.")
 
+    with col_feat3:
+        # 3rd Priority: Balance (Importance: 111)
+        st.metric(label="Tertiary Driver", value="Balance")
+        # 'Account liquidity' is a great professional term you used!
+        st.caption("Account liquidity is a key indicator of total customer engagement.")
+    
 # Technical Methodology
 with st.expander("⚙️ Technical Methodology") :
     st.markdown("""
