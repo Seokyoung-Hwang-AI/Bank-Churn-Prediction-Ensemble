@@ -6,7 +6,7 @@
 ---
 
 ## 📖 Project Overview
-This project addresses the critical business challenge of customer churn in the banking sector. By evolving from a baseline comparison to a **sophisticated ensemble pipeline (XGBoost, CatBoost, LightGBM)**, I achieved a **0.92 ROC-AUC score**, providing actionable insights for proactive retention strategies.
+This project addresses the critical business challenge of customer churn in the banking sector. By evolving from a baseline comparison to a **sophisticated ensemble pipeline (XGBoost, CatBoost, LightGBM)**, I achieved **0.92 ROC-AUC score**, providing actionable insights for proactive retention strategies.
 
 ---
 
