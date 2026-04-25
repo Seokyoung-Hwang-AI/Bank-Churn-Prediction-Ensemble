@@ -67,13 +67,13 @@ The prediction is powered by an **Ensemble Model** combining XGBoost, CatBoost, 
 # Inference Pipeline
 # Apply Feature Engineering & Transformation
 # Ensures input data matches the scaling/encoding used during model training
-processed_input = preprocessor.transform(input_df)
+processed_input_raw = preprocessor.transform(input_df)
 feature_names = preprocessor.get_feature_names_out()
+processed_input = pd.DataFrame(processed_input_raw, columns=feature_names)
 
 # Soft Voting Ensemble Prediction
 # Averaging the predicted probabilities from each base model for higher reliability
-dinput = xgb.DMatrix(processed_input, feature_names=list(feature_names))
-prob_xgb = model_xgb.predict(dinput)
+prob_xgb = model_xgb.predict(xgb.DMatrix(processed_input))
 prob_cat = model_cat.predict_proba(processed_input)[:, 1]
 prob_lgb = model_lgb.predict_proba(processed_input)[:, 1]
 
